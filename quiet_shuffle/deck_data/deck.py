@@ -1,3 +1,4 @@
+import asyncio
 import random
 from typing import List
 
@@ -7,7 +8,8 @@ from quiet_shuffle.card_data.card_types import Card, Creature, Season, CreatureS
 def create_deck() -> List[Card]:
     return [Card(creature=Creature(cs.name), season=Season(cs.value)) for cs in CreatureSeason]
 
-def shuffle_deck(deck: List[Card]) -> List[Card]:
+async def shuffle_deck(deck: List[Card]) -> List[Card]:
+    await asyncio.sleep(0)
     random.shuffle(deck)
     return deck
 
