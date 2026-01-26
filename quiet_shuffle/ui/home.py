@@ -1,6 +1,7 @@
 import pygame, sys
 from pygame.locals import *
 from settings import *
+from button import button
 
 pygame.init()
 
@@ -29,7 +30,8 @@ while True: # main game loop
     user_events()
 
     DISPLAYSURF.blit(deck_img, (250, 75))
-    DISPLAYSURF.blit(FONT.render("Determine today's vibe", True, WHITE), (275,525))
     # button
+    button(DISPLAYSURF, 525, "Determine today's vibe")
+    button(DISPLAYSURF, 575, "Quit")
     
     pygame.display.update()
